@@ -27,9 +27,34 @@ Hyperparameter for this algorithm:
   - Learning rate
   - Batch size
   - Epochs
+  - Decay
   - Momentum
 - Regularization
   - Lambda
 
 ### Prediction
 **Output:** most probable class for classification and some value for regression.
+
+## Pseudocode
+
+### Solve the model parameters (fitting)
+- Input
+  - X : The input training data set
+  - y : The output training data set
+  - hidden_layer_sizes
+  - activation
+  - batch_size
+  - max_iter
+  - learning_rate
+  - decay
+  - momentum
+  - random_state
+- Output
+  - coef_ : the weight
+  - intercept_ : the intercept
+- Stopping criterion
+  - Maximum iteration (epoch)
+- Process
+```
+
+```

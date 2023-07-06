@@ -6,6 +6,7 @@ This project has an objective to create a simple code of Machine Learning algori
 
 Neural Network is one of the popular algorithms in Machine Learning which are inspired by organic brains. This model consists of interconnected nodes, known as neurons, organized into layers. The network's structure is typically divided into three main types of layers: input layer, hidden layers, and output layer. Details of this model will be explained later.
 
+---
 ## Components of Learning 
 
 ### Hypothesis
@@ -35,6 +36,7 @@ Hyperparameter for this algorithm:
 ### Prediction
 **Output:** most probable class for classification and some value for regression.
 
+---
 ## Pseudocode
 
 ### Solve the model parameters (fitting)
@@ -55,6 +57,10 @@ Hyperparameter for this algorithm:
 - Stopping criterion
   - Maximum iteration (epoch)
 - Process
-```
-
-```
+> Initialize parameters: random value by Xavier's method
+>
+> **while** (iter < max_iter):
+>> **for** batch_slice in batches:
+>>> **Forward pass**. Compute activation value every neuron $a^{[k]} = \sigma(z^{[k]}) = \sigma(w^{[k]^T} a^{[k-1]} + b^{[k]})$
+>>>
+>>> **Backward pass**. Compute 

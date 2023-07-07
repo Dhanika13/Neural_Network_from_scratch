@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 def relu_activation(Z):
     """ 
@@ -163,7 +164,7 @@ class NeuralNetworks:
 
     max_iter : int, default=200
         Maximum number of iterations. The solver iterates until convergence or
-        reach this number iterations.
+        reach this number iterations. In this case, this is max epoch.
     
     learning_rate : float, default=1e-3
         Value of learning rate to update the parameters.
@@ -181,8 +182,14 @@ class NeuralNetworks:
     momentum : float, default=0.9
         Momentum parameter for update the parameters. Should be between 0 and 1.
 
+    lambda_r : float, default=1e-4
+        Regularization parameter.
+
     random_state : int, default=42 
         Determines random number generation for parameters initialization.
+
+    is_loss_plot : bool, default=False
+        When the value is True, plot the loss vs epochs.
     """ 
     def __init__(
         self,
@@ -195,8 +202,9 @@ class NeuralNetworks:
         decay=1e-3,
         use_momentum=False,
         momentum=0.9,
-        alpha=1e-3,
+        lambda_r=1e-4,
         random_state=42,
+        is_loss_plot=False,
     ):
         self.hidden_layer_sizes = hidden_layer_sizes
         self.activation = activation
@@ -207,8 +215,9 @@ class NeuralNetworks:
         self.decay = decay
         self.use_momentum = use_momentum
         self.momentum = momentum
-        self.alpha = alpha
+        self.lambda_r = lambda_r
         self.random_state = random_state
+        self.is_loss_plot = is_loss_plot
     
     def _init_coef(self, n_in, n_out):
         """ 
@@ -394,7 +403,7 @@ class NeuralNetworks:
             List where contains dL/db from every layer, except 1st layer.
         """ 
         coef_grads[layer] = np.dot(activations[layer].T, deltas[layer])
-        coef_grads[layer] += self.alpha * self.coefs_[layer]
+        coef_grads[layer] += self.lambda_r * self.coefs_[layer]
         coef_grads[layer] /= n_samples
 
         intercept_grads[layer] = np.mean(deltas[layer], 0)
@@ -442,7 +451,7 @@ class NeuralNetworks:
         for s in self.coefs_:
             s = s.ravel()
             regularization_loss += np.dot(s, s)
-        loss += (0.5 * self.alpha) * regularization_loss / n_samples
+        loss += (0.5 * self.lambda_r) * regularization_loss / n_samples
 
         # Start backward propagation from last layer
         last = self.n_layers_ - 2
@@ -629,3 +638,11 @@ class NeuralNetworks:
                 else:
                     print(f'epoch: {it}, ' +
                         f'loss: {self.loss_[it]:.3f}, ')
+        
+        # Plot the loss
+        if (self.is_loss_plot):
+            plt.plot(np.arange(self.max_iter), self.loss_)
+            plt.title('Loss plot')
+            plt.xlabel('epoch')
+            plt.ylabel('loss')
+            plt.show()

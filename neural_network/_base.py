@@ -130,7 +130,7 @@ def squared_loss(y_true, y_pred):
     loss : float
         Value of loss from learning process.
     """ 
-    return 0.5*((y_true -  y_pred)**2).mean()
+    return 0.5*((y_true - y_pred)**2).mean()
 
 LOSS_FUNCTIONS = {
     "log_loss": log_loss,

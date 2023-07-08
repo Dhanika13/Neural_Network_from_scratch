@@ -57,6 +57,7 @@ class TrainTestSplit:
     if self.shuffle:
         np.random.seed(self.random_state)
         test_ind = np.random.choice(range(n_samples), int(self.test_size*n_samples))
+        test_ind = sorted(test_ind, reverse=False)
     else:
         test_ind = np.arange(n_samples-int(self.test_size*n_samples), n_samples)
 

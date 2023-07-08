@@ -28,6 +28,7 @@ X, y = create_data(n_samples=200,
                    noise_sig=0.2,
                    random_state=42)
 
+# Split the data into train dataset and test dataset
 X_train, y_train, X_test, y_test = TrainTestSplit(shuffle=True).split(X, y)
 
 nn = NeuralNetworksClassifier(learning_rate=1e-1,

@@ -16,7 +16,7 @@ Neural Network is one of the popular algorithms in Machine Learning which are in
 ## Components of Learning <a name="component-of-learning"/>
 
 ### Hypothesis
-Every neuron on a specific layer receives input of linear lines from the previous layer, then transforms it into non-linear function that we will call the activation function. Thus we will have non-linear hypothesis space.
+Set of all linear lines.
 
 ### Parameters
 - Weights or coefficients
@@ -115,3 +115,7 @@ Hyperparameter for this algorithm:
 
 ---
 ## Examples <a name="examples"/>
+
+<p align='center'>
+  <img src="./figure/decay.svg">
+</p>

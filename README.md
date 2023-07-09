@@ -7,8 +7,8 @@ This project has an objective to create a simple code of Machine Learning algori
 2. [Components of Learning](#component-of-learning)
 3. [Pseudocode](#pseudocode)
 4. [Examples](#examples)
-5. [References](#references)
-6. [Conclusions](#conclusions)
+5. [Conclusions](#conclusions)
+6. [References](#references)
 
 ## What is Neural Network? <a name="what-is-nn"/>
 

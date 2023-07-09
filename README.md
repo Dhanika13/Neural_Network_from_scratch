@@ -207,7 +207,7 @@ The results of this learning process are shown in loss plot and animation of pre
   <em>Animation of predicted function.</em>
 </p>
 
-Loss value for train data is 0.019 and for test data is 0.021. The difference is not so large and the predicted function not overfitting the train data, instead give similar plot for true sine function. 
+Loss value for train data is 0.019 and for test data is 0.021. The difference is not so large and the predicted function not overfitting the train data, instead give a similar plot for true sine function. 
 
 ---
 

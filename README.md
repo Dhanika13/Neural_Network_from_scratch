@@ -8,6 +8,7 @@ This project has an objective to create a simple code of Machine Learning algori
 3. [Pseudocode](#pseudocode)
 4. [Examples](#examples)
 5. [References](#references)
+6. [Conclusions](#conclusions)
 
 ## What is Neural Network? <a name="what-is-nn"/>
 
@@ -208,6 +209,14 @@ The results of this learning process are shown in loss plot and animation of pre
 </p>
 
 Loss value for train data is 0.019 and for test data is 0.021. The difference is not so large and the predicted function not overfitting the train data, instead give a similar plot for true sine function. 
+
+---
+
+## Conclusions <a name="conclusions"/>
+
+From this project, simple codes of Neural Network from scratch can be used to predict target values for classification and regression cases. Main idea for Neural Networks is the back-propagation step which is used to compute the parameter of the model. Main problem for this algorithm is easy to overfitting the train data. Thus, we need some hyperparameters and optimization algorithms to increase its efficiency. In this project, some attempts to overcome this problem are using regularization, decaying learning rate, and add momentum optimization. From some examples before, we can learn that hyperparameter tuning is very important to avoid overfitting and increase its efficiency.
+
+For future works, more optimization algorithms can be added like Adam optimizer or RMSprop. The codes can be developed furthermore for complex cases like Physics-Informed Neural Network with automatic differentiation algorithm to compute gradients of loss from differential equations.
 
 ---
 

@@ -138,16 +138,16 @@ To observe the effect of learning rate, I apply momentum optimization and decayi
 | test accuracy | 81.3% | 82.7% |
 
 <p align='center'>
-  <img src="./figure/test1.svg" width="500">
-  <img src="./figure/test2.svg" width="500">
+  <img src="./figure/test1.svg" width="48%">
+  <img src="./figure/test2.svg" width="48%"><br>
   <em>Results of classification by Neural Networks model. Left figure for learning rate = 1e-1 and the right one for learning rate = 1e-2.</em>
 </p>
 
 Based on the results, higher train accuracy can be achieved by smaller number of max_iter for large learning rate since the learning process is faster. The problem arises when we look at test accuracy, large learning rate gives higher train accuracy but lower test accuracy with difference of about 14%, and for lower learning rate gives higher test accuracy with small difference against train accuracy. These results show us a sign of overfitting over data with higher learning rate. After all, the 1% difference in test accuracy for those two learning rates is negligible for practical cases and higher learning rate is more efficient because lower max_iter is used.
 
 <p align='center'>
-  <img src="./figure/ContourPlot1.gif" width="500">
-  <img src="./figure/ContourPlot2.gif" width="500">
+  <img src="./figure/ContourPlot1.gif" width="48%">
+  <img src="./figure/ContourPlot2.gif" width="48%"><br>
   <em>Animation of contour plot for the predicted region of every class. Left animation for learning rate = 1e-1 and the right one for learning rate = 1e-2.</em>
 </p>
 
